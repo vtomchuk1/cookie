@@ -1,7 +1,7 @@
 <?php
 
 try {
-    $conn = new PDO("mysql:host=localhost;dbname=recipe", "recipe", "recipe");
+    
     if(isset($_POST['id'])){
         $id = $_POST['id'];
         $sql = "SELECT * FROM full_list WHERE id = {$id};";
