@@ -24,10 +24,11 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/app.css" rel="stylesheet">
     <link href="assets/css/icons.css" rel="stylesheet">
-    <!-- Theme Style CSS -->
+    <!-- Theme Style CSS
     <link rel="stylesheet" href="assets/css/dark-theme.css" />
     <link rel="stylesheet" href="assets/css/semi-dark.css" />
     <link rel="stylesheet" href="assets/css/header-colors.css" />
+    -->
     <title>Dashtrans - Bootstrap5 Admin Template</title>
 </head>
 
@@ -41,7 +42,7 @@
                 <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
             </div>
             <div>
-                <h4 class="logo-text">Cookies</h4>
+                <h4 class="logo-text">Поїж нормально</h4>
             </div>
             <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
             </div>
@@ -376,7 +377,7 @@
                         <span class="position-absolute top-50 search-close translate-middle-y"><i class='bx bx-x'></i></span>
                     </div>
                 </div>
-                -->
+
                 <div class="top-menu ms-auto">
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item mobile-search-icon">
@@ -716,6 +717,7 @@
                         </li>
                     </ul>
                 </div>
+                -->
             </nav>
         </div>
     </header>
@@ -759,7 +761,7 @@
             <div class="card">
                 <div class="row g-0">
                     <div class="col-md-3 border-end">
-                        <img src="/image.png" class="img-fluid" alt="...">
+                        <img src="" class="img-fluid" alt="...">
                         <!--
                         <div class="row mb-3 row-cols-auto g-2 justify-content-center mt-3">
                             <div class="col"><img src="https://via.placeholder.com/110x110" width="70" class="border rounded cursor-pointer" alt=""></div>
@@ -1005,38 +1007,7 @@
 </div>
 <!--end wrapper-->
 <!--start switcher-->
-<div class="switcher-wrapper">
-    <div class="switcher-btn"> <i class='bx bx-cog bx-spin'></i>
-    </div>
-    <div class="switcher-body">
-        <div class="d-flex align-items-center">
-            <h5 class="mb-0 text-uppercase">Theme Customizer</h5>
-            <button type="button" class="btn-close ms-auto close-switcher" aria-label="Close"></button>
-        </div>
-        <hr/>
-        <p class="mb-0">Gaussian Texture</p>
-        <hr>
-        <ul class="switcher">
-            <li id="theme1"></li>
-            <li id="theme2"></li>
-            <li id="theme3"></li>
-            <li id="theme4"></li>
-            <li id="theme5"></li>
-            <li id="theme6"></li>
-        </ul>
-        <hr>
-        <p class="mb-0">Gradient Background</p>
-        <hr>
-        <ul class="switcher">
-            <li id="theme7"></li>
-            <li id="theme8"></li>
-            <li id="theme9"></li>
-            <li id="theme10"></li>
-            <li id="theme11"></li>
-            <li id="theme12"></li>
-        </ul>
-    </div>
-</div>
+
 <!--end switcher-->
 
 
@@ -1067,8 +1038,11 @@
 <!--app JS -->
 <script src="assets/js/app.js"></script>
 <script>
+    /*
     new PerfectScrollbar('.product-list');
     new PerfectScrollbar('.customers-list');
+
+     */
 </script>
 <script type="application/javascript">
     $(document).ready(function(){

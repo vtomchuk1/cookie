@@ -24,10 +24,11 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/app.css" rel="stylesheet">
     <link href="assets/css/icons.css" rel="stylesheet">
-    <!-- Theme Style CSS -->
+    <!-- Theme Style CSS
     <link rel="stylesheet" href="assets/css/dark-theme.css" />
     <link rel="stylesheet" href="assets/css/semi-dark.css" />
     <link rel="stylesheet" href="assets/css/header-colors.css" />
+    -->
     <title>Dashtrans - Bootstrap5 Admin Template</title>
 </head>
 
@@ -378,6 +379,7 @@
                     </div>
                 </div>
                 -->
+                <!--
                 <div class="top-menu ms-auto">
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item mobile-search-icon">
@@ -717,6 +719,7 @@
                         </li>
                     </ul>
                 </div>
+                -->
             </nav>
         </div>
     </header>
@@ -837,38 +840,7 @@
 </div>
 <!--end wrapper-->
 <!--start switcher-->
-<div class="switcher-wrapper">
-    <div class="switcher-btn"> <i class='bx bx-cog bx-spin'></i>
-    </div>
-    <div class="switcher-body">
-        <div class="d-flex align-items-center">
-            <h5 class="mb-0 text-uppercase">Theme Customizer</h5>
-            <button type="button" class="btn-close ms-auto close-switcher" aria-label="Close"></button>
-        </div>
-        <hr/>
-        <p class="mb-0">Gaussian Texture</p>
-        <hr>
-        <ul class="switcher">
-            <li id="theme1"></li>
-            <li id="theme2"></li>
-            <li id="theme3"></li>
-            <li id="theme4"></li>
-            <li id="theme5"></li>
-            <li id="theme6"></li>
-        </ul>
-        <hr>
-        <p class="mb-0">Gradient Background</p>
-        <hr>
-        <ul class="switcher">
-            <li id="theme7"></li>
-            <li id="theme8"></li>
-            <li id="theme9"></li>
-            <li id="theme10"></li>
-            <li id="theme11"></li>
-            <li id="theme12"></li>
-        </ul>
-    </div>
-</div>
+
 <!--end switcher-->
 
 
@@ -1010,24 +982,29 @@
             beforeSend: funcBefore,
             success:  function(data){
                 var input_data = JSON.parse(data);
+                var max_int = Math.floor(Math.random() * (120 - 70 + 1)) + 70;
+                var min_int = Math.floor(Math.random() * (50 - 1 + 1)) + 1;
                 input_data.forEach(function(v){
-                    var html_code = `
-                    <div class="col">
-                        <div class="card">
-                            <a href="recipe.php?id=${v.id}">
-                            <img src="/${v.image}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h6 class="card-title cursor-pointer">${v.name}</h6>
-                                    <div class="clearfix">
-                                        <p class="mb-0 float-start">${v.time_cookie}</p>
-                                        <p class="mb-0 float-end">${v.category}</p>
+                    if(v.id <= max_int && v.id >= min_int){
+                        var html_code = `
+                        <div class="col">
+                            <div class="card">
+                                <a href="recipe.php?id=${v.id}">
+                                <img src="/${v.image}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h6 class="card-title cursor-pointer">${v.name}</h6>
+                                        <div class="clearfix">
+                                            <p class="mb-0 float-start">${v.time_cookie}</p>
+                                            <p class="mb-0 float-end">${v.category}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    `;
-                    $('.product-grid').append(html_code);
+                        `;
+                        $('.product-grid').append(html_code);
+                    }
+
                 });
             }
         });

@@ -70,7 +70,7 @@ $(function() {
 			}
 		}
 	};
-	new ApexCharts(document.querySelector("#chart1"), e).render();
+	
 	e = {
 		series: [{
 			name: "Customers",
@@ -141,7 +141,7 @@ $(function() {
 			}
 		}
 	};
-	new ApexCharts(document.querySelector("#chart2"), e).render();
+	
 	e = {
 		series: [{
 			name: "Store Visitores",
@@ -212,7 +212,7 @@ $(function() {
 			}
 		}
 	};
-	new ApexCharts(document.querySelector("#chart3"), e).render();
+	
 	e = {
 		series: [{
 			name: "Total Sales",
@@ -267,7 +267,7 @@ $(function() {
 			}
 		}
 	};
-	new ApexCharts(document.querySelector("#chart4"), e).render();
+	
 	e = {
 		series: [{
 			name: "Revenue",
@@ -349,7 +349,7 @@ $(function() {
 			}
 		}
 	};
-	new ApexCharts(document.querySelector("#chart5"), e).render();
+	
 	e = {
 		series: [{
 			name: "Revenue",
@@ -431,7 +431,7 @@ $(function() {
 			}
 		}
 	};
-	new ApexCharts(document.querySelector("#chart6"), e).render();
+	
 	e = {
 		series: [{
 			name: "Revenue",
@@ -513,7 +513,7 @@ $(function() {
 			}
 		}
 	};
-	new ApexCharts(document.querySelector("#chart7"), e).render();
+	
 	e = {
 		series: [{
 			name: "Revenue",
@@ -595,7 +595,7 @@ $(function() {
 			}
 		}
 	};
-	new ApexCharts(document.querySelector("#chart8"), e).render();
+	
 	e = {
 		series: [{
 			name: "Revenue",
@@ -677,7 +677,7 @@ $(function() {
 			}
 		}
 	};
-	new ApexCharts(document.querySelector("#chart9"), e).render();
+	
 	e = {
 		series: [{
 			name: "Revenue",
@@ -759,7 +759,7 @@ $(function() {
 			}
 		}
 	};
-	new ApexCharts(document.querySelector("#chart10"), e).render();
+	
 	e = {
 		series: [{
 			name: "Revenue",
@@ -841,7 +841,7 @@ $(function() {
 			}
 		}
 	};
-	new ApexCharts(document.querySelector("#chart11"), e).render();
+	
 	e = {
 		series: [{
 			name: "Revenue",
@@ -923,7 +923,7 @@ $(function() {
 			}
 		}
 	};
-	new ApexCharts(document.querySelector("#chart12"), e).render();
+	
 	e = {
 		series: [{
 			name: "Pageviews",
@@ -1005,7 +1005,7 @@ $(function() {
 			}
 		}
 	};
-	new ApexCharts(document.querySelector("#chart13"), e).render();
+	
 	e = {
 		series: [{
 			name: "New Sessions",
@@ -1087,7 +1087,7 @@ $(function() {
 			}
 		}
 	};
-	new ApexCharts(document.querySelector("#chart14"), e).render();
+	
 	e = {
 		series: [25, 65, 10, 14],
 		chart: {
@@ -1131,7 +1131,7 @@ $(function() {
 			}
 		}]
 	};
-	new ApexCharts(document.querySelector("#chart15"), e).render();
+	
 	e = {
 		chart: {
 			height: 180,
@@ -1212,7 +1212,7 @@ $(function() {
 		},
 		labels: ["Completed"]
 	};
-	new ApexCharts(document.querySelector("#chart16"), e).render();
+	
 	e = {
 		chart: {
 			height: 180,
@@ -1292,7 +1292,7 @@ $(function() {
 		},
 		labels: ["Cancelled"]
 	};
-	new ApexCharts(document.querySelector("#chart17"), e).render();
+	
 	e = {
 		chart: {
 			height: 180,
@@ -1372,7 +1372,7 @@ $(function() {
 		},
 		labels: ["In Progress"]
 	};
-	new ApexCharts(document.querySelector("#chart18"), e).render();
+	
 	e = {
 		series: [{
 			name: "Orders",
@@ -1453,7 +1453,7 @@ $(function() {
 			}
 		}
 	};
-	new ApexCharts(document.querySelector("#chart19"), e).render();
+	
 	e = {
 		series: [87],
 		chart: {
@@ -1524,7 +1524,7 @@ $(function() {
 			}
 		}]
 	};
-	new ApexCharts(document.querySelector("#chart20"), e).render();
+	
 	e = {
 		series: [{
 			name: "Visitors",
@@ -1601,5 +1601,5 @@ $(function() {
 			}
 		}
 	};
-	new ApexCharts(document.querySelector("#chart21"), e).render()
+	
 });

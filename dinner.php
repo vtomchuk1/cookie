@@ -24,10 +24,11 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/app.css" rel="stylesheet">
     <link href="assets/css/icons.css" rel="stylesheet">
-    <!-- Theme Style CSS -->
+    <!-- Theme Style CSS
     <link rel="stylesheet" href="assets/css/dark-theme.css" />
     <link rel="stylesheet" href="assets/css/semi-dark.css" />
     <link rel="stylesheet" href="assets/css/header-colors.css" />
+    -->
     <title>Dashtrans - Bootstrap5 Admin Template</title>
 </head>
 
@@ -41,7 +42,7 @@
                 <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
             </div>
             <div>
-                <h4 class="logo-text">Cookies</h4>
+                <h4 class="logo-text">Поїж нормально</h4>
             </div>
             <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
             </div>
@@ -377,6 +378,7 @@
                     </div>
                 </div>
                 -->
+                <!--
                 <div class="top-menu ms-auto">
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item mobile-search-icon">
@@ -716,6 +718,7 @@
                         </li>
                     </ul>
                 </div>
+                -->
             </nav>
         </div>
     </header>
@@ -724,7 +727,8 @@
     <div class="page-wrapper">
 
         <div class="page-content">
-
+            <a href="#" class="btn btn-light delete-button">Видалити усі страви</a>
+            <hr>
 
 
 
@@ -749,38 +753,7 @@
 </div>
 <!--end wrapper-->
 <!--start switcher-->
-<div class="switcher-wrapper">
-    <div class="switcher-btn"> <i class='bx bx-cog bx-spin'></i>
-    </div>
-    <div class="switcher-body">
-        <div class="d-flex align-items-center">
-            <h5 class="mb-0 text-uppercase">Theme Customizer</h5>
-            <button type="button" class="btn-close ms-auto close-switcher" aria-label="Close"></button>
-        </div>
-        <hr/>
-        <p class="mb-0">Gaussian Texture</p>
-        <hr>
-        <ul class="switcher">
-            <li id="theme1"></li>
-            <li id="theme2"></li>
-            <li id="theme3"></li>
-            <li id="theme4"></li>
-            <li id="theme5"></li>
-            <li id="theme6"></li>
-        </ul>
-        <hr>
-        <p class="mb-0">Gradient Background</p>
-        <hr>
-        <ul class="switcher">
-            <li id="theme7"></li>
-            <li id="theme8"></li>
-            <li id="theme9"></li>
-            <li id="theme10"></li>
-            <li id="theme11"></li>
-            <li id="theme12"></li>
-        </ul>
-    </div>
-</div>
+
 <!--end switcher-->
 
 
@@ -793,8 +766,9 @@
 <script src="assets/js/jquery.cookie.js"></script>
 <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
 <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
-<script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
 <!--
+<script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+
 <script src="assets/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
 -->
 <script src="assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
@@ -811,11 +785,19 @@
 <!--app JS -->
 <script src="assets/js/app.js"></script>
 <script>
+    /*
     new PerfectScrollbar('.product-list');
     new PerfectScrollbar('.customers-list');
+    */
+
 </script>
 <script type="application/javascript">
     $(document).ready(function(){
+
+        $('.delete-button').click(function(){
+            $.cookie('recipe', null);
+            location.reload();
+        });
 
         if($.cookie('products')){
             var data = $.cookie('products');
@@ -849,11 +831,22 @@
                         var p_text_recipe = n_text_recipe.replace(/<\/p>/g, '');
                         var split_text = p_text_recipe.split('\n');
                         var data_string = "";
+
                         split_text.forEach(function(vv){
-                           if(vv.length > 2){
+                            var flag_nope = 'danger';
+                           if(vv.length > 5){
+
+                               product_data.forEach(function(prod){
+                                   if(vv.includes(prod)) {
+                                       console.log('vv ' + vv);
+                                       console.log('prod ' + prod);
+                                       flag_nope = 'success';
+                                   }
+                               });
+                                console.log(flag_nope);
                                data_string += `
                                     <tr>
-                                        <td class="text-success">${vv}</td>
+                                        <td class="text-${flag_nope}">${vv}</td>
                                     </tr>
 `;
                            }
@@ -872,15 +865,6 @@
                                         </thead>
                                         <tbody>
                                         ` + data_string +`
-                                        <tr>
-                                            <td class="text-success">Mark</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-danger">Jacob</td>
-                                        </tr>
-                                        <tr>
-                                            <td >Larry the Bird</td>
-                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>
