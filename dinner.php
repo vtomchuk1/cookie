@@ -725,79 +725,9 @@
 
         <div class="page-content">
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row align-items-center">
-                                <!--
-                                <div class="col-lg-3 col-xl-2">
-                                    <a href="ecommerce-add-new-products.html" class="btn btn-light mb-3 mb-lg-0"><i class='bx bxs-plus-square'></i>New Product</a>
-                                </div>
-                                -->
-                                <div class="col-lg-9 col-xl-10">
-                                    <form class="float-lg-end">
-                                        <div class="row row-cols-lg-auto g-2">
-                                            <div class="col-12">
-                                                <div class="position-relative">
-                                                    <input type="text" class="form-control ps-5" placeholder="Search Product..."> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                                                    <button type="button" class="btn btn-light">Sort By</button>
-                                                    <div class="btn-group" role="group">
-                                                        <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <i class='bx bx-chevron-down'></i>
-                                                        </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                                            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                                                            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                                                    <button type="button" class="btn btn-light">Collection Type</button>
-                                                    <div class="btn-group" role="group">
-                                                        <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <i class='bx bxs-category'></i>
-                                                        </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                                            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                                                            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="btn-group" role="group">
-                                                    <button type="button" class="btn btn-light">Price Range</button>
-                                                    <div class="btn-group" role="group">
-                                                        <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <i class='bx bx-slider'></i>
-                                                        </button>
-                                                        <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="btnGroupDrop1">
-                                                            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                                                            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 product-grid">
-                <!-- custom card recipe -->
 
-            </div>
+
 
             <!--end row-->
 
@@ -811,9 +741,11 @@
     <!--end overlay-->
     <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
     <!--End Back To Top Button-->
+    <!--
     <footer class="page-footer">
         <p class="mb-0">Copyright © 2021. All right reserved.</p>
     </footer>
+    -->
 </div>
 <!--end wrapper-->
 <!--start switcher-->
@@ -858,6 +790,7 @@
 
 <!--plugins -->
 <script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.cookie.js"></script>
 <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
 <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
 <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
@@ -883,53 +816,102 @@
 </script>
 <script type="application/javascript">
     $(document).ready(function(){
+
+        if($.cookie('products')){
+            var data = $.cookie('products');
+            var product_data = JSON.parse(data);
+        }
+        else{
+            var product_data = [];
+        }
+
+        if($.cookie('recipe')){
+            var data = $.cookie('recipe');
+            var recipe_data = JSON.parse(data);
+        }
+        else{
+            var recipe_data = [];
+        }
+
+        recipe_data.forEach(function(v_recipe_data){
+            $.ajax ({
+                url: "/api/list_recipe.php",
+                type: "POST",
+                data: ({id: v_recipe_data}),
+                dataType: "html",
+                beforeSend: funcBefore,
+                success:  function(data){
+                    var input_data = JSON.parse(data);
+                    input_data.forEach(function(v){
+
+                        var text_recipe = v.list_prod;
+                        var n_text_recipe = text_recipe.replace(/<p>/g, '');
+                        var p_text_recipe = n_text_recipe.replace(/<\/p>/g, '');
+                        var split_text = p_text_recipe.split('\n');
+                        var data_string = "";
+                        split_text.forEach(function(vv){
+                           if(vv.length > 2){
+                               data_string += `
+                                    <tr>
+                                        <td class="text-success">${vv}</td>
+                                    </tr>
+`;
+                           }
+                        });
+
+
+                        var html_code = `
+                        <div class="row">
+                            <div class="card">
+                                <div class="card-body">
+                                    <table class="table mb-0">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">${v.name}</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        ` + data_string +`
+                                        <tr>
+                                            <td class="text-success">Mark</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-danger">Jacob</td>
+                                        </tr>
+                                        <tr>
+                                            <td >Larry the Bird</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                        $('.page-content').append(html_code);
+
+
+
+
+                    });
+                }
+            });
+
+        });
+
+
+
+
+
+
+
+
         function funcBefore () {
             $("#information").text ("Ожидание данных...")
         }
         function funcSuccess (data) {
         }
-        $.ajax ({
-            url: "/api/recipe.php",
-            type: "POST",
-            data: ({id: '3'}),
-            dataType: "html",
-            beforeSend: funcBefore,
-            success:  function(data){
-                var input_data = JSON.parse(data);
-                input_data.forEach(function(v){
-                    alert(v.name);
-                });
-            }
-        });
-        $.ajax ({
-            url: "/api/list_recipe.php",
-            type: "POST",
-            //data: ({num1: '12',num3: '34'}),
-            //dataType: "html",
-            beforeSend: funcBefore,
-            success:  function(data){
-                var input_data = JSON.parse(data);
-                input_data.forEach(function(v){
-                    var html_code = `
-                    <div class="col">
-                        <div class="card">
-                            <a href="recipe.php?id=${v.id}">
-                            <img src="/image.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h6 class="card-title cursor-pointer">${v.name}</h6>
-                                    <div class="clearfix">
-                                        <p class="mb-0 float-start">${v.time_cookie}</p>
-                                        <p class="mb-0 float-end">${v.category}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    `;
-                    $('.product-grid').append(html_code);
-                });
-            }
-        });
+
+
     });
 </script>
 </body>

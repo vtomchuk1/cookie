@@ -1046,6 +1046,7 @@
 
 <!--plugins -->
 <script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.cookie.js"></script>
 <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
 <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
 <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
@@ -1071,17 +1072,32 @@
 </script>
 <script type="application/javascript">
     $(document).ready(function(){
+        var custom_id = getGet('id');
         function funcBefore () {
             $("#information").text ("Ожидание данных...")
         }
         function funcSuccess (data) {
         }
+        $(".btn-success").click(function(){
+            if($.cookie('recipe')){
+                var data = $.cookie('recipe');
+                var input_data = JSON.parse(data);
+                input_data.push(custom_id);
+                var new_data = JSON.stringify(input_data);
+                $.cookie('recipe', new_data);
+            }
+            else{
+                var input_data_else = [];
+                input_data_else.push(custom_id);
+                var new_data_else = JSON.stringify(input_data_else);
+                $.cookie('recipe', new_data_else);
+            }
+        });
         function getGet(name) {
             var s = window.location.search;
             s = s.match(new RegExp(name + '=([^&=]+)'));
             return s ? s[1] : false;
         }
-        var custom_id = getGet('id');
         $.ajax ({
             url: "/api/list_recipe.php",
             type: "POST",

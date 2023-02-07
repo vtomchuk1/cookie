@@ -41,7 +41,7 @@
                 <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
             </div>
             <div>
-                <h4 class="logo-text">Cookies</h4>
+                <h4 class="logo-text">Поїж нормально</h4>
             </div>
             <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
             </div>
@@ -739,18 +739,20 @@
                                 <div class="col-lg-9 col-xl-10">
                                     <form class="float-lg-end">
                                         <div class="row row-cols-lg-auto g-2">
+                                            <!--
                                             <div class="col-12">
                                                 <div class="position-relative">
                                                     <input type="text" class="form-control ps-5" placeholder="Пошук рецептів ..."> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
                                                 </div>
                                             </div>
+
                                             <div class="col-12">
                                                 <div class="position-relative">
                                                     <button type="button" class="btn btn-light ">Пошук</button>
                                                 </div>
 
                                             </div>
-
+                                            -->
                                             <div class="col-12">
                                                 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                                                     <button type="button" class="btn btn-light">Складність</button>
