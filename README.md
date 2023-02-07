@@ -16,7 +16,7 @@ stack tecnology
 this project use bootstrap template Dathtrans
 https://codecanyon.net/item/rukada-responsive-vertical-menu/31289526
 
-this project use recipe from website rud.ua
+this project use recipe from website rud.ua (not advertising)
 https://rud.ua/consumer/recipe/
 
 
