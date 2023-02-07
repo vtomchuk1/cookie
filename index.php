@@ -982,10 +982,10 @@
             beforeSend: funcBefore,
             success:  function(data){
                 var input_data = JSON.parse(data);
-                var max_int = Math.floor(Math.random() * (120 - 70 + 1)) + 70;
-                var min_int = Math.floor(Math.random() * (50 - 1 + 1)) + 1;
+
+
                 input_data.forEach(function(v){
-                    if(v.id <= max_int && v.id >= min_int){
+
                         var html_code = `
                         <div class="col">
                             <div class="card">
@@ -1003,7 +1003,7 @@
                         </div>
                         `;
                         $('.product-grid').append(html_code);
-                    }
+
 
                 });
             }
