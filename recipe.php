@@ -92,7 +92,6 @@
             include 'menu.php';
 
             ?>
-
             <!--
             <li>
                 <a href="javascript:;" class="has-arrow">
@@ -726,97 +725,268 @@
 
         <div class="page-content">
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
+            <!--breadcrumb-->
+            <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                <div class="breadcrumb-title pe-3">Рецепти</div>
+                <div class="ps-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-0 p-0">
+                            <!--
+                            <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                            </li>
+                            -->
+                            <li class="breadcrumb-item active" aria-current="page">Products Details</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="ms-auto">
+                    <!--
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-light">Settings</button>
+                        <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	<a class="dropdown-item" href="javascript:;">Action</a>
+                            <a class="dropdown-item" href="javascript:;">Another action</a>
+                            <a class="dropdown-item" href="javascript:;">Something else here</a>
+                            <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+            <!--end breadcrumb-->
+
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-3 border-end">
+                        <img src="/image.png" class="img-fluid" alt="...">
+                        <!--
+                        <div class="row mb-3 row-cols-auto g-2 justify-content-center mt-3">
+                            <div class="col"><img src="https://via.placeholder.com/110x110" width="70" class="border rounded cursor-pointer" alt=""></div>
+                            <div class="col"><img src="https://via.placeholder.com/110x110" width="70" class="border rounded cursor-pointer" alt=""></div>
+                            <div class="col"><img src="https://via.placeholder.com/110x110" width="70" class="border rounded cursor-pointer" alt=""></div>
+                            <div class="col"><img src="https://via.placeholder.com/110x110" width="70" class="border rounded cursor-pointer" alt=""></div>
+                        </div>
+                        -->
+                    </div>
+                    <div class="col-md-9">
                         <div class="card-body">
-                            <div class="row align-items-center">
+                            <h4 class="card-title">Off-White Odsy-1000 Men Half T-Shirt</h4>
+
+                            <div class="d-flex gap-3 py-3">
                                 <!--
-                                <div class="col-lg-3 col-xl-2">
-                                    <a href="ecommerce-add-new-products.html" class="btn btn-light mb-3 mb-lg-0"><i class='bx bxs-plus-square'></i>New Product</a>
+                                <div class="cursor-pointer">
+                                    <i class='bx bxs-star text-warning'></i>
+                                    <i class='bx bxs-star text-warning'></i>
+                                    <i class='bx bxs-star text-warning'></i>
+                                    <i class='bx bxs-star text-warning'></i>
+                                    <i class='bx bxs-star'></i>
                                 </div>
                                 -->
-                                <div class="col-lg-9 col-xl-10">
-                                    <form class="float-lg-end">
-                                        <div class="row row-cols-lg-auto g-2">
-                                            <div class="col-12">
-                                                <div class="position-relative">
-                                                    <input type="text" class="form-control ps-5" placeholder="Пошук рецептів ..."> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="position-relative">
-                                                    <button type="button" class="btn btn-light ">Пошук</button>
-                                                </div>
+                                <div class="recipe-time-cookie">142 reviews</div>
+                                <div class="recipe-level"> 134 orders</div>
+                                <div class="recipe-time-eat">142 reviews</div>
+                            </div>
+                            <hr>
+                            <h4 > Список продуктів</h4>
+                            <!--
+                            <div class="mb-3">
+                                <span class="price h4">$149.00</span>
+                                <span class="">/per kg</span>
+                            </div>
+                            -->
+                            <div class="card-text fs-6 prod-list"></div>
+                            <!--
+                            <dl class="row">
+                                <dt class="col-sm-3">Model#</dt>
+                                <dd class="col-sm-9">Odsy-1000</dd>
 
-                                            </div>
+                                <dt class="col-sm-3">Color</dt>
+                                <dd class="col-sm-9">Brown</dd>
 
-                                            <div class="col-12">
-                                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                                                    <button type="button" class="btn btn-light">Складність</button>
-                                                    <div class="btn-group" role="group">
-                                                        <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <i class='bx bx-chevron-down'></i>
-                                                        </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                                            <li><a class="dropdown-item config-list-level" href="#">Легко</a></li>
-                                                            <li><a class="dropdown-item config-list-level" href="#">Помірно</a></li>
-                                                            <li><a class="dropdown-item config-list-level" href="#">Складно</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--
-                                            <div class="col-12">
-                                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                                                    <button type="button" class="btn btn-light">Час приготування</button>
-                                                    <div class="btn-group" role="group">
-                                                        <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <i class='bx bxs-category'></i>
-                                                        </button>
-                                                        <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                                            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                                                            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            -->
-                                            <div class="col-12">
-                                                <div class="btn-group" role="group">
-                                                    <button type="button" class="btn btn-light">Категорія</button>
-                                                    <div class="btn-group" role="group">
-                                                        <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <i class='bx bx-slider'></i>
-                                                        </button>
-                                                        <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="btnGroupDrop1">
-                                                            <li><a class="dropdown-item config-list-category" href="#">Перші страви</a></li>
-                                                            <li><a class="dropdown-item config-list-category" href="#">Другі страви</a></li>
-                                                            <li><a class="dropdown-item config-list-category" href="#">Салати та закуски</a></li>
-                                                            <li><a class="dropdown-item config-list-category" href="#">Випічка</a></li>
-                                                            <li><a class="dropdown-item config-list-category" href="#">Торти</a></li>
-                                                            <li><a class="dropdown-item config-list-category" href="#">Десерти</a></li>
-                                                            <li><a class="dropdown-item config-list-category" href="#">Напої</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
+                                <dt class="col-sm-3">Delivery</dt>
+                                <dd class="col-sm-9">Russia, USA, and Europe </dd>
+                            </dl>
+                            -->
+                            <hr>
+                            <h4> Рецепт приготування</h4>
+                            <div class="card-text fs-6 instrunction"></div>
+
+                            <!--
+                            <div class="row row-cols-auto row-cols-1 row-cols-md-3 align-items-center">
+                                <div class="col">
+                                    <label class="form-label">Quantity</label>
+                                    <div class="input-group input-spinner">
+                                        <button class="btn btn-light" type="button" id="button-plus"> + </button>
+                                        <input type="text" class="form-control" value="1">
+                                        <button class="btn btn-light" type="button" id="button-minus"> − </button>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Select size</label>
+                                    <div class="">
+                                        <label class="form-check form-check-inline">
+                                            <input type="radio"class="form-check-input"  name="select_size" checked="" class="custom-control-input">
+                                            <div class="form-check-label">Small</div>
+                                        </label>
+                                        <label class="form-check form-check-inline">
+                                            <input type="radio"class="form-check-input"  name="select_size" checked="" class="custom-control-input">
+                                            <div class="form-check-label">Medium</div>
+                                        </label>
+
+                                        <label class="form-check form-check-inline">
+                                            <input type="radio"class="form-check-input"  name="select_size" checked="" class="custom-control-input">
+                                            <div class="form-check-label">Large</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Select Color</label>
+                                    <div class="color-indigators d-flex align-items-center gap-2">
+                                        <div class="color-indigator-item bg-primary"></div>
+                                        <div class="color-indigator-item bg-danger"></div>
+                                        <div class="color-indigator-item bg-success"></div>
+                                        <div class="color-indigator-item bg-warning"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+                            <div class="d-flex gap-3 mt-3">
+                                <a href="#" class="btn btn-success">Додати до вечері</a>
+                                <!--
+                                <a href="#" class="btn btn-light"><span class="text">Add to cart</span> <i class='bx bxs-cart-alt'></i></a>
+                                -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <!--
+                <div class="card-body">
+                    <ul class="nav nav-tabs mb-0" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#primaryhome" role="tab" aria-selected="true">
+                                <div class="d-flex align-items-center">
+                                    <div class="tab-icon"><i class='bx bx-comment-detail font-18 me-1'></i>
+                                    </div>
+                                    <div class="tab-title"> Product Description </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-bs-toggle="tab" href="#primaryprofile" role="tab" aria-selected="false">
+                                <div class="d-flex align-items-center">
+                                    <div class="tab-icon"><i class='bx bx-bookmark-alt font-18 me-1'></i>
+                                    </div>
+                                    <div class="tab-title">Tags</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-bs-toggle="tab" href="#primarycontact" role="tab" aria-selected="false">
+                                <div class="d-flex align-items-center">
+                                    <div class="tab-icon"><i class='bx bx-star font-18 me-1'></i>
+                                    </div>
+                                    <div class="tab-title">Reviews</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content pt-3">
+                        <div class="tab-pane fade show active" id="primaryhome" role="tabpanel">
+                            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi.</p>
+                            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi.</p>
+                        </div>
+                        <div class="tab-pane fade" id="primaryprofile" role="tabpanel">
+                            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                        </div>
+                        <div class="tab-pane fade" id="primarycontact" role="tabpanel">
+                            <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>
+
+            <!--
+            <h6 class="text-uppercase mb-0">Рецомендації</h6>
+            <hr/>
+            <div class="row row-cols-1 row-cols-lg-3">
+                <div class="col">
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://via.placeholder.com/110x110" class="img-fluid" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h6 class="card-title">Light Grey Headphone</h6>
+                                    <div class="cursor-pointer my-2">
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-secondary"></i>
+                                    </div>
+                                    <div class="clearfix">
+                                        <p class="mb-0 float-start fw-bold"><span class="me-2 text-decoration-line-through text-secondary">$240</span><span>$199</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://via.placeholder.com/110x110" class="img-fluid" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h6 class="card-title">Black Cover iPhone 8</h6>
+                                    <div class="cursor-pointer my-2">
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                    </div>
+                                    <div class="clearfix">
+                                        <p class="mb-0 float-start fw-bold"><span class="me-2 text-decoration-line-through text-secondary">$179</span><span>$110</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://via.placeholder.com/110x110" class="img-fluid" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h6 class="card-title">Men Hand Watch</h6>
+                                    <div class="cursor-pointer my-2">
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-warning"></i>
+                                        <i class="bx bxs-star text-secondary"></i>
+                                        <i class="bx bxs-star text-secondary"></i>
+                                    </div>
+                                    <div class="clearfix">
+                                        <p class="mb-0 float-start fw-bold"><span class="me-2 text-decoration-line-through text-secondary">$150</span><span>$120</span></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 product-grid">
-                <!-- custom card recipe -->
-
-            </div>
-
-            <!--end row-->
-
+            -->
 
         </div>
 
@@ -896,136 +1066,42 @@
 <!--app JS -->
 <script src="assets/js/app.js"></script>
 <script>
-    /*
     new PerfectScrollbar('.product-list');
     new PerfectScrollbar('.customers-list');
-
-     */
 </script>
 <script type="application/javascript">
-
-
-
-        $(document).ready(function(){
-
-            $(".config-list-category").click(function(index, text){
-                $('.product-grid').empty();
-                var c_category = $(this).text() + " ";
-                $.ajax ({
-                    url: "/api/list_recipe.php",
-                    type: "POST",
-                    data: ({category: c_category}),
-                    dataType: "html",
-                    beforeSend: funcBefore,
-                    success:  function(data){
-                        var input_data = JSON.parse(data);
-                        input_data.forEach(function(v){
-                            var html_code = `
-                    <div class="col">
-                        <div class="card">
-                            <a href="recipe.php?id=${v.id}">
-                            <img src="/${v.image}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h6 class="card-title cursor-pointer">${v.name}</h6>
-                                    <div class="clearfix">
-                                        <p class="mb-0 float-start">${v.time_cookie}</p>
-                                        <p class="mb-0 float-end">${v.category}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    `;
-                            $('.product-grid').append(html_code);
-                        });
-                    }
-                });
-
-            });
-
-
-            $(".config-list-level").click(function(index, text){
-                $('.product-grid').empty();
-                var c_level = $(this).text() + " ";
-                $.ajax ({
-                    url: "/api/list_recipe.php",
-                    type: "POST",
-                    data: ({level: c_level}),
-                    dataType: "html",
-                    beforeSend: funcBefore,
-                    success:  function(data){
-                        var input_data = JSON.parse(data);
-                        input_data.forEach(function(v){
-                            var html_code = `
-                    <div class="col">
-                        <div class="card">
-                            <a href="recipe.php?id=${v.id}">
-                            <img src="/${v.image}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h6 class="card-title cursor-pointer">${v.name}</h6>
-                                    <div class="clearfix">
-                                        <p class="mb-0 float-start">${v.time_cookie}</p>
-                                        <p class="mb-0 float-end">${v.category}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    `;
-                            $('.product-grid').append(html_code);
-                        });
-                    }
-                });
-
-            });
-
+    $(document).ready(function(){
         function funcBefore () {
             $("#information").text ("Ожидание данных...")
         }
         function funcSuccess (data) {
         }
-        /*
+        function getGet(name) {
+            var s = window.location.search;
+            s = s.match(new RegExp(name + '=([^&=]+)'));
+            return s ? s[1] : false;
+        }
+        var custom_id = getGet('id');
         $.ajax ({
-            url: "/api/recipe.php",
+            url: "/api/list_recipe.php",
             type: "POST",
-            data: ({id: '3'}),
+            data: ({id: custom_id}),
             dataType: "html",
             beforeSend: funcBefore,
             success:  function(data){
                 var input_data = JSON.parse(data);
                 input_data.forEach(function(v){
-                    alert(v.name);
-                });
-            }
-        });
-        */
 
-        $.ajax ({
-            url: "/api/list_recipe.php",
-            type: "POST",
-            //data: ({num1: '12',num3: '34'}),
-            //dataType: "html",
-            beforeSend: funcBefore,
-            success:  function(data){
-                var input_data = JSON.parse(data);
-                input_data.forEach(function(v){
-                    var html_code = `
-                    <div class="col">
-                        <div class="card">
-                            <a href="recipe.php?id=${v.id}">
-                            <img src="/${v.image}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h6 class="card-title cursor-pointer">${v.name}</h6>
-                                    <div class="clearfix">
-                                        <p class="mb-0 float-start">${v.time_cookie}</p>
-                                        <p class="mb-0 float-end">${v.category}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    `;
-                    $('.product-grid').append(html_code);
+                    $(".breadcrumb-item").text(v.name);
+                    $(".card-title").text(v.name);
+                    $(".recipe-time-cookie").text(v.time_cookie);
+                    $(".recipe-time-eat").text(v.time_eat);
+                    $(".recipe-level").text(v.level);
+                    $(".prod-list").append(v.list_prod);
+
+                    $(".instrunction").append(v.instruction);
+                    $(".img-fluid").prop('src', "/" + v.image);
+
                 });
             }
         });

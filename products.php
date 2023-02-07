@@ -728,6 +728,7 @@
 
             <div class="row">
                 <div class="col-12">
+
                     <div class="card">
                         <div class="card-body">
                             <div class="row align-items-center">
@@ -810,9 +811,62 @@
                 </div>
             </div>
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 product-grid">
-                <!-- custom card recipe -->
-
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h5 class="mb-0">Available breakpoints</h5>
+                    </div>
+                    <hr>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Breakpoint</th>
+                                <th>Class infix</th>
+                                <th>Dimensions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>X-Small</td>
+                                <td><em>None</em>
+                                </td>
+                                <td>&lt;576px</td>
+                            </tr>
+                            <tr>
+                                <td>Small</td>
+                                <td><code>sm</code>
+                                </td>
+                                <td>≥576px</td>
+                            </tr>
+                            <tr>
+                                <td>Medium</td>
+                                <td><code>md</code>
+                                </td>
+                                <td>≥768px</td>
+                            </tr>
+                            <tr>
+                                <td>Large</td>
+                                <td><code>lg</code>
+                                </td>
+                                <td>≥992px</td>
+                            </tr>
+                            <tr>
+                                <td>Extra large</td>
+                                <td><code>xl</code>
+                                </td>
+                                <td>≥1200px</td>
+                            </tr>
+                            <tr>
+                                <td>Extra extra large</td>
+                                <td><code>xxl</code>
+                                </td>
+                                <td>≥1400px</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
 
             <!--end row-->

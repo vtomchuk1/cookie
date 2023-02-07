@@ -92,7 +92,6 @@
             include 'menu.php';
 
             ?>
-
             <!--
             <li>
                 <a href="javascript:;" class="has-arrow">
@@ -741,35 +740,26 @@
                                         <div class="row row-cols-lg-auto g-2">
                                             <div class="col-12">
                                                 <div class="position-relative">
-                                                    <input type="text" class="form-control ps-5" placeholder="Пошук рецептів ..."> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
+                                                    <input type="text" class="form-control ps-5" placeholder="Search Product..."> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
                                                 </div>
                                             </div>
-                                            <div class="col-12">
-                                                <div class="position-relative">
-                                                    <button type="button" class="btn btn-light ">Пошук</button>
-                                                </div>
-
-                                            </div>
-
                                             <div class="col-12">
                                                 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                                                    <button type="button" class="btn btn-light">Складність</button>
+                                                    <button type="button" class="btn btn-light">Sort By</button>
                                                     <div class="btn-group" role="group">
                                                         <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown" aria-expanded="false">
                                                             <i class='bx bx-chevron-down'></i>
                                                         </button>
                                                         <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                                            <li><a class="dropdown-item config-list-level" href="#">Легко</a></li>
-                                                            <li><a class="dropdown-item config-list-level" href="#">Помірно</a></li>
-                                                            <li><a class="dropdown-item config-list-level" href="#">Складно</a></li>
+                                                            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                                                            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--
                                             <div class="col-12">
                                                 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                                                    <button type="button" class="btn btn-light">Час приготування</button>
+                                                    <button type="button" class="btn btn-light">Collection Type</button>
                                                     <div class="btn-group" role="group">
                                                         <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown" aria-expanded="false">
                                                             <i class='bx bxs-category'></i>
@@ -781,22 +771,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            -->
                                             <div class="col-12">
                                                 <div class="btn-group" role="group">
-                                                    <button type="button" class="btn btn-light">Категорія</button>
+                                                    <button type="button" class="btn btn-light">Price Range</button>
                                                     <div class="btn-group" role="group">
                                                         <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown" aria-expanded="false">
                                                             <i class='bx bx-slider'></i>
                                                         </button>
                                                         <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="btnGroupDrop1">
-                                                            <li><a class="dropdown-item config-list-category" href="#">Перші страви</a></li>
-                                                            <li><a class="dropdown-item config-list-category" href="#">Другі страви</a></li>
-                                                            <li><a class="dropdown-item config-list-category" href="#">Салати та закуски</a></li>
-                                                            <li><a class="dropdown-item config-list-category" href="#">Випічка</a></li>
-                                                            <li><a class="dropdown-item config-list-category" href="#">Торти</a></li>
-                                                            <li><a class="dropdown-item config-list-category" href="#">Десерти</a></li>
-                                                            <li><a class="dropdown-item config-list-category" href="#">Напої</a></li>
+                                                            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                                                            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -827,11 +811,9 @@
     <!--end overlay-->
     <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
     <!--End Back To Top Button-->
-    <!--
     <footer class="page-footer">
         <p class="mb-0">Copyright © 2021. All right reserved.</p>
     </footer>
-    -->
 </div>
 <!--end wrapper-->
 <!--start switcher-->
@@ -896,95 +878,16 @@
 <!--app JS -->
 <script src="assets/js/app.js"></script>
 <script>
-    /*
     new PerfectScrollbar('.product-list');
     new PerfectScrollbar('.customers-list');
-
-     */
 </script>
 <script type="application/javascript">
-
-
-
-        $(document).ready(function(){
-
-            $(".config-list-category").click(function(index, text){
-                $('.product-grid').empty();
-                var c_category = $(this).text() + " ";
-                $.ajax ({
-                    url: "/api/list_recipe.php",
-                    type: "POST",
-                    data: ({category: c_category}),
-                    dataType: "html",
-                    beforeSend: funcBefore,
-                    success:  function(data){
-                        var input_data = JSON.parse(data);
-                        input_data.forEach(function(v){
-                            var html_code = `
-                    <div class="col">
-                        <div class="card">
-                            <a href="recipe.php?id=${v.id}">
-                            <img src="/${v.image}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h6 class="card-title cursor-pointer">${v.name}</h6>
-                                    <div class="clearfix">
-                                        <p class="mb-0 float-start">${v.time_cookie}</p>
-                                        <p class="mb-0 float-end">${v.category}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    `;
-                            $('.product-grid').append(html_code);
-                        });
-                    }
-                });
-
-            });
-
-
-            $(".config-list-level").click(function(index, text){
-                $('.product-grid').empty();
-                var c_level = $(this).text() + " ";
-                $.ajax ({
-                    url: "/api/list_recipe.php",
-                    type: "POST",
-                    data: ({level: c_level}),
-                    dataType: "html",
-                    beforeSend: funcBefore,
-                    success:  function(data){
-                        var input_data = JSON.parse(data);
-                        input_data.forEach(function(v){
-                            var html_code = `
-                    <div class="col">
-                        <div class="card">
-                            <a href="recipe.php?id=${v.id}">
-                            <img src="/${v.image}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h6 class="card-title cursor-pointer">${v.name}</h6>
-                                    <div class="clearfix">
-                                        <p class="mb-0 float-start">${v.time_cookie}</p>
-                                        <p class="mb-0 float-end">${v.category}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    `;
-                            $('.product-grid').append(html_code);
-                        });
-                    }
-                });
-
-            });
-
+    $(document).ready(function(){
         function funcBefore () {
             $("#information").text ("Ожидание данных...")
         }
         function funcSuccess (data) {
         }
-        /*
         $.ajax ({
             url: "/api/recipe.php",
             type: "POST",
@@ -998,8 +901,6 @@
                 });
             }
         });
-        */
-
         $.ajax ({
             url: "/api/list_recipe.php",
             type: "POST",
@@ -1013,7 +914,7 @@
                     <div class="col">
                         <div class="card">
                             <a href="recipe.php?id=${v.id}">
-                            <img src="/${v.image}" class="card-img-top" alt="...">
+                            <img src="/image.png" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h6 class="card-title cursor-pointer">${v.name}</h6>
                                     <div class="clearfix">

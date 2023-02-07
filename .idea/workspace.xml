@@ -22,15 +22,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Xtabich/Desktop/cookie",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Program/OpenServer/OpenServer/domains/cookie&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Program\OpenServer\OpenServer\domains\cookie" />
+      <recent name="D:\Program\OpenServer\OpenServer\domains\cookie\api" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Program\OpenServer\OpenServer\domains\cookie" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -40,6 +49,12 @@
       <option name="presentableId" value="Default" />
       <updated>1675695442096</updated>
       <workItem from="1675695444595" duration="686000" />
+      <workItem from="1675696819806" duration="594000" />
+      <workItem from="1675721386279" duration="5773000" />
+      <workItem from="1675761027245" duration="3003000" />
+      <workItem from="1675765190260" duration="5235000" />
+      <workItem from="1675774620597" duration="3820000" />
+      <workItem from="1675786290965" duration="1662000" />
     </task>
     <servers />
   </component>
